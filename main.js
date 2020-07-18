@@ -23,8 +23,11 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  console.log('running'); //debug
   createWindow();
+  console.log('created window, running date function'); //debug
   runDate();
+  //test();
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
@@ -47,18 +50,26 @@ app.on('window-all-closed', function () {
 function runDate() {
   let hours, minutes, seconds;
   for (let hours = 0; hours < 24; hours++) {
+    //this loop checks if the last digit of the number of milliseconds is zero, to make this clock more precise
+    //it runs every hour just to make sure
+    let start = 1;
+    while (start) {
+      start = startOn0;
+    }
     hours = updateHours();
     for(let minutes = 0; minutes < 60; minutes++) {
       minutes = updateMinutes();
       for(let seconds = 0; seconds < 60; seconds++) {
         seconds = updateSeconds();
-        console.log("The current time is: " + hours + " " + minutes + " " + seconds);
+        //console.log("The current time is: " + hours + " " + minutes + " " + seconds); //for debug uses in the future, logs to console when running through npm start
+        console.log(seconds.length, seconds);
         sleep(1000);
       }
     }
   }
 }
 
+//these three functions do exactly their description, they update the hours, minutes and seconds on the clock
 function updateHours() {
   let now = new Date();
   let hours = String(now.getHours());
@@ -72,13 +83,39 @@ function updateMinutes() {
 function updateSeconds() {
   let now = new Date();
   let seconds = String(now.getSeconds());
+  if (seconds.length == 1) {
+    console.log('0'+String(seconds));
+    console.log(now);
+    seconds = '0'+String(seconds);
+    seconds = Number(seconds);
+  }
   return seconds;
 }
 
+//this function blocks any action until it finishes, basically making EVERYTHING wait for it to finish
 function sleep(milliseconds) {
   const date = Date.now();
   let currentDate = null;
   do {
     currentDate = Date.now();
   } while (currentDate - date < milliseconds);
+}
+
+function startOn0() {
+  let endsWith0 = false;
+  while (!endsWith0) {
+    let now = new Date;
+    let milli = String(now.getTime());
+    endsWith0 = milli.endsWith("0", milli.length);
+  }
+  return 0;
+}
+
+//function for testing stuff, should not run in normal cycle
+function test() {
+  while (true) {
+    let now = new Date;
+    let milli = String(now.getTime());
+    console.log(milli);
+  }
 }

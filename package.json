@@ -1,0 +1,11 @@
+{
+  "name": "timeelectronapp",
+  "version": "1.0.0",
+  "description": "An Electron app that beautifully shows the time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "oof2win2",
+  "license": "ISC"
+}

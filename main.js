@@ -90,6 +90,7 @@ function sleep(milliseconds) {
   do {
     currentDate = Date.now();
   } while (currentDate - date < milliseconds);
+}
 
 //function for testing stuff, should not run in normal cycle
 function test() {

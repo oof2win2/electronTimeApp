@@ -3,7 +3,7 @@ const {app, BrowserWindow} = require('electron');
 const path = require('path');
 
 //all of the code I wrote is in myCode.js, to make this file cleaner and have less junk
-import { runDate, test } from './myCode.js';
+const { runDate, test } =  require('./myCode.js');
 
 function createWindow () {
   // Create the browser window.

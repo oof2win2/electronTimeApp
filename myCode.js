@@ -55,4 +55,4 @@ function test() {
 }
 
 
-export { runDate, test };
+module.exports = { runDate, test };

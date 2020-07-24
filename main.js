@@ -3,7 +3,7 @@ const {app, BrowserWindow} = require('electron');
 const path = require('path');
 
 //all of the code I wrote is in myCode.js, to make this file cleaner and have less junk
-const { runDate, test } =  require('./myCode.js');
+const { runDate, test, run } =  require('./myCode.js');
 
 function createWindow () {
   // Create the browser window.
@@ -29,7 +29,7 @@ app.whenReady().then(() => {
   console.log('running'); //debug
   createWindow();
   console.log('created window, running date function'); //debug
-  runDate();  //function to run and test the whole thing
+  //runDate();  //function to run and test the whole thing
   //test();   //testing function for small things, e.g. sleep() function
 
   app.on('activate', function () {

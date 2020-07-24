@@ -54,5 +54,14 @@ function test() {
   }
 }
 
+function run() {
+  while (1) {
+    document.getElementById("hrs").innerHTML = updateHours();
+    document.getElementById("mins").innerHTML = updateMinutes();
+    document.getElementById("secs").innerHTML = updateSeconds();
+  }
+}
 
-module.exports = { runDate, test };
+module.exports = { runDate, test, run };
+
+run();

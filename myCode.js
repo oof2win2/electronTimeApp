@@ -1,3 +1,4 @@
+const { app  } = require('electron');
 //module of my code to make main.js cleaner
 
 function runDate() {
@@ -10,7 +11,7 @@ function runDate() {
         seconds = updateSeconds();
         console.log("The current time is: " + hours + " " + minutes + " " + seconds); //for debug uses in the future, logs to console when running through npm start
         //console.log(seconds.length, seconds);
-        sleep(20);
+        sleep(80);
       }
     }
   }
@@ -59,9 +60,8 @@ function run() {
     document.getElementById("hrs").innerHTML = updateHours();
     document.getElementById("mins").innerHTML = updateMinutes();
     document.getElementById("secs").innerHTML = updateSeconds();
+    sleep(80);
   }
 }
 
 module.exports = { runDate, test, run };
-
-run();

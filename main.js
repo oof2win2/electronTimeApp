@@ -29,6 +29,7 @@ app.whenReady().then(() => {
   console.log('running'); //debug
   createWindow();
   console.log('created window, running date function'); //debug
+  run();      //the full run cycle
   //runDate();  //function to run and test the whole thing
   //test();   //testing function for small things, e.g. sleep() function
 

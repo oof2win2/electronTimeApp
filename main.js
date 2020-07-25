@@ -2,17 +2,15 @@
 const {app, BrowserWindow} = require('electron');
 const path = require('path');
 
-//all of the code I wrote is in myCode.js, to make this file cleaner and have less junk
-const { runDate, test } =  require('./myCode.js');
-
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 500,
+    height: 300,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
-    }
+    },
+    frame: false,
   })
 
   // and load the index.html of the app.
@@ -26,10 +24,10 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-  console.log('running'); //debug
+  //console.log('running'); //debug
   createWindow();
-  console.log('created window, running date function'); //debug
-  runDate();  //function to run and test the whole thing
+  //console.log('created window, running date function'); //debug
+  //run();      //the full run cycle
   //test();   //testing function for small things, e.g. sleep() function
 
   app.on('activate', function () {

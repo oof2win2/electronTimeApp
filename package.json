@@ -1,18 +1,11 @@
 {
-  "name": "electron-quick-start",
+  "name": "electronTimeAapp",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A minimal Electron time displaying app",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
   "author": "oof2win2",
   "license": "CC0-1.0",
   "devDependencies": {

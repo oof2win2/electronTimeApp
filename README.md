@@ -6,4 +6,6 @@ Made using Electron v9.1.0 on macOS 10.15.5, npm 6.14.5
 
 
 # TODO:
-- [ ] Work on something to output the hours, minutes and seconds to the Electron window correctly
+- [X] Work on something to output the hours, minutes and seconds to the Electron window correctly
+- [ ] Add an input file to set background and foreground color, font family etc.
+- [ ] Remove all references of while loops, even in testing functions

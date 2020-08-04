@@ -4,6 +4,7 @@ I decided to not use Google servers at the moment, partially because I don't kno
 
 Made using Electron v9.1.0 on macOS 10.15.5, npm 6.14.5
 
+The app is in the status of just adding cosmetic add-ons and publishing to the Electron store
 
 # TODO:
 - [X] Work on something to output the hours, minutes and seconds to the Electron window correctly
